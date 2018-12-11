@@ -1,4 +1,4 @@
-package com.tvestergaard.rest;
+package com.mkl.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -8,7 +8,6 @@ import javax.ws.rs.core.MediaType;
 @Path("resource")
 public class MyResource
 {
-
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt()

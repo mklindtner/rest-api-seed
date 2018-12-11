@@ -1,4 +1,4 @@
-package com.tvestergaard.rest;
+package com.mkl;
 
 import org.junit.Test;
 
