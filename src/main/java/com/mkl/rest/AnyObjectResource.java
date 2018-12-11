@@ -13,10 +13,10 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+//import javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 
-//@Path("anyObject") I HAVE NO IDEA WHY THIS WORKS
+@Path("anyObject2")
 public class AnyObjectResource
 {
 	private static Gson            gson            = new GsonBuilder().setPrettyPrinting().create();
@@ -24,23 +24,25 @@ public class AnyObjectResource
 	private        AnyObjectFacade anyObjectFacade = new AnyObjectFacade(JPAConnection.getEntityManagerFactory());
 
 	@GET
-	@Produces(APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response getAnyObjects()
 	{
-		return Response.ok(gson.toJson(new String("hi"))).build();
+		return baseRest.get();
 	}
 
 	@POST
-	@Consumes(APPLICATION_JSON)
-	@Produces(APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response createAnyObject(String content)
 	{
 		return baseRest.post(content);
-		/*
+	}
+
+
+
+	/* normal way:
 		AnyObject anyObject = gson.fromJson(content, AnyObject.class);
 		AnyObject anyObjectCreated = anyObjectFacade.createAnyObject(anyObject);
 		return Response.ok(gson.toJson(AnyObjectDTO.basic(anyObjectCreated))).build(); */
-	}
-
 
 }
