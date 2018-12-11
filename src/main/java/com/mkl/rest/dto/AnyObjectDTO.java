@@ -15,7 +15,7 @@ public class AnyObjectDTO implements BaseDTOMapper<AnyObject, AnyObjectDTO>
 
 	@Override public AnyObjectDTO apply(AnyObject anyObject)
 	{
-		return basic(anyObject);
+		return new AnyObjectDTO(anyObject.getNameString(), anyObject.getId());
 	}
 
 	public static AnyObjectDTO basic(AnyObject anyObject) {
