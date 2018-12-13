@@ -15,11 +15,10 @@ public class AnyObjectDTO implements BaseDTOMapper<AnyObject, AnyObjectDTO>
 
 	@Override public AnyObjectDTO apply(AnyObject anyObject)
 	{
-		return new AnyObjectDTO(anyObject.getNameString(), anyObject.getId());
+		return basic(anyObject);
 	}
 
 	public static AnyObjectDTO basic(AnyObject anyObject) {
 		return new AnyObjectDTO(anyObject.getNameString(), anyObject.getId());
 	}
-
 }
