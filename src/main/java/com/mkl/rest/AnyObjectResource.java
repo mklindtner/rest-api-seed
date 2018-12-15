@@ -19,9 +19,13 @@ import javax.ws.rs.core.Response;
 @Path("anyObject2")
 public class AnyObjectResource
 {
-	private static Gson            gson            = new GsonBuilder().setPrettyPrinting().create();
-	private        BaseRest<AnyObject, AnyObjectDTO> baseRest        = new BaseRest<AnyObject, AnyObjectDTO>(AnyObject.class, new AnyObjectDTO());
-	private        AnyObjectFacade anyObjectFacade = new AnyObjectFacade(JPAConnection.getEntityManagerFactory());
+	private static Gson                              gson     = new GsonBuilder().setPrettyPrinting().create();
+	private        BaseRest<AnyObject, AnyObjectDTO> baseRest =
+			new BaseRest<AnyObject, AnyObjectDTO>(
+					AnyObject.class,
+					new AnyObjectDTO(),
+					new AnyObjectFacade(JPAConnection.getEntityManagerFactory())
+			);
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -37,6 +41,25 @@ public class AnyObjectResource
 	{
 		return baseRest.post(content);
 	}
+
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("{id}")
+	public Response anyObjectById(@PathParam("id") int id)
+	{
+		return baseRest.getByPK(id);
+	}
+
+	@DELETE
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("{id}")
+	public Response deleteAnyObjectById(@PathParam("id") int id)
+	{
+		return baseRest.delete(id);
+	}
+
+
 
 
 

@@ -4,8 +4,9 @@ import com.mkl.data.entities.AnyObject;
 import com.mkl.data.repositories.AnyObjectRepository;
 
 import javax.persistence.EntityManagerFactory;
+import java.util.Set;
 
-public class AnyObjectFacade
+public class AnyObjectFacade implements Facade<AnyObject>
 {
 	private AnyObjectRepository anyObjectRepository;
 
@@ -18,9 +19,37 @@ public class AnyObjectFacade
 		return anyObjectRepository.createAnyObject(anyObject.getNameString());
 	}
 
+	@Override public Set<AnyObject> get()
+	{
+		return anyObjectRepository.getAllAnyObject();
+	}
+
+	@Override public AnyObject get(int id)
+	{
+		return anyObjectRepository.getAnyObject(id);
+	}
+
+	@Override public AnyObject put(AnyObject anyObject)
+	{
+		return anyObjectRepository.updateAnyObject(anyObject);
+	}
+
+	@Override public AnyObject post(AnyObject object)
+	{
+		return anyObjectRepository.createAnyObject(object.getNameString());
+	}
+
+	@Override public AnyObject delete(int id)
+	{
+		return anyObjectRepository.deleteAnyObject(id);
+	}
+
+/*
 	public AnyObject getAnyObject(int id) {
 		return anyObjectRepository.getAnyObject(id);
 	}
 
-	//both repo all here
+	public Set<AnyObject> getAllAnyObject() {
+		return anyObjectRepository.getAllAnyObject();
+	} */
 }
