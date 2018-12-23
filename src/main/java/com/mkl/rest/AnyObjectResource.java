@@ -6,6 +6,7 @@ import com.mkl.data.JPAConnection;
 import com.mkl.data.entities.AnyObject;
 import com.mkl.logic.facades.AnyObjectFacade;
 import com.mkl.rest.dto.AnyObjectDTO;
+import com.mkl.rest.exceptions.specificResponseExceptions.TestException;
 import com.mkl.rest.genericRest.BaseRest;
 
 //import javax.ws.rs.*;
@@ -57,6 +58,15 @@ public class AnyObjectResource
 	public Response deleteAnyObjectById(@PathParam("id") int id)
 	{
 		return baseRest.delete(id);
+	}
+
+
+	@GET
+	@Path("provokeException")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response throwTestException() throws TestException
+	{
+		throw new TestException("this is a testException calling test exception mapper", "test error");
 	}
 
 
