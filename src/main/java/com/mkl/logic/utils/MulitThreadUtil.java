@@ -1,10 +1,4 @@
-package com.mkl.logic.Utils;
-
-import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.List;
+package com.mkl.logic.utils;
 
 public class MulitThreadUtil<Edto>
 {
