@@ -21,7 +21,7 @@ public class GeneralExceptionMapper implements ExceptionMapper<Exception>
 	@Override public Response toResponse(Exception exception)
 	{
 		//boolean isDebug = "true".equals(context.getInitParameter("debug"));
-		boolean isDebug = true;
+		boolean           isDebug           = true;
 		ExceptionResponse exceptionResponse = new ExceptionResponse();
 		exceptionResponse.errorName = exception.getClass().getSimpleName();
 		exceptionResponse.message = "An unexpected error occurred.";
@@ -32,5 +32,14 @@ public class GeneralExceptionMapper implements ExceptionMapper<Exception>
 		}
 
 		return Response.status(500).entity(gson.toJson(exceptionResponse)).build();
+	}
+
+	public static Response makeErrRes(String errorMessage, int responseCode)
+	{
+		ExceptionResponse exceptionResponse = new ExceptionResponse();
+		exceptionResponse.errorName = exceptionResponse.getClass().getSimpleName();
+		exceptionResponse.message = errorMessage;
+		exceptionResponse.responseCode = responseCode;
+		return Response.status(responseCode).entity(gson.toJson(exceptionResponse)).build();
 	}
 }

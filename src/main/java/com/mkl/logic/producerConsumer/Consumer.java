@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class Consumer<Output> implements Runnable
 {
 	public abstract void task(Output output); //?? mby??
-	ArrayBlockingQueue<Output> arrayBlockingQueue;
+	protected ArrayBlockingQueue<Output> arrayBlockingQueue;
 
 	public Consumer(ArrayBlockingQueue<Output> arrayBlockingQueue)
 	{
@@ -17,7 +17,7 @@ public abstract class Consumer<Output> implements Runnable
 	{
 		while(true) {
 			try {
-				Output output = arrayBlockingQueue.poll(10, TimeUnit.SECONDS); //change according to need
+				Output output = arrayBlockingQueue.poll(4, TimeUnit.SECONDS); //change according to need
 				if(output == null)
 					break;
 				task(output);

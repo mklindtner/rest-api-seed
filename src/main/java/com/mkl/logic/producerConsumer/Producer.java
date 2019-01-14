@@ -7,8 +7,8 @@ public abstract class Producer<Input, Output> implements Runnable
 {
 	private int secondsBeforePull;
 	public abstract Output task(Input input);
-	ArrayBlockingQueue<Input>  inputArrayBlockingQueue;
-	ArrayBlockingQueue<Output> outputArrayBlockingQueue;
+	protected ArrayBlockingQueue<Input>  inputArrayBlockingQueue;
+	protected ArrayBlockingQueue<Output> outputArrayBlockingQueue;
 
 	public Producer(ArrayBlockingQueue<Input> arrayBlockingQueue, ArrayBlockingQueue<Output> outputArrayBlockingQueue, int secondsBeforePull)
 	{
@@ -24,7 +24,7 @@ public abstract class Producer<Input, Output> implements Runnable
 				Input input = inputArrayBlockingQueue.poll(secondsBeforePull, TimeUnit.SECONDS); //change according to need
 				if (input == null)
 					break;
-				outputArrayBlockingQueue.add(task(input));
+				outputArrayBlockingQueue.put(task(input));
 				System.out.println("---Producer finished task:" + Thread.currentThread().getName() + "---");
 			} catch (InterruptedException ex) {
 				System.out.println("----EXCEPTION FROM PRODUCER----: " + ex);
