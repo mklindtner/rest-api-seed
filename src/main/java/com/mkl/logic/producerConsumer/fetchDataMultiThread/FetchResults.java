@@ -25,4 +25,19 @@ public class FetchResults
 		results.append("]");
 		return results;
 	}
+
+	public StringBuffer getResult(ArrayBlockingQueue<String> Q1, ArrayBlockingQueue<String> Q2) throws InterruptedException
+	{
+		StringBuffer sb = new StringBuffer();
+		sb.append("[");
+		ExecutorService es = Executors.newCachedThreadPool();
+
+		es.execute(new FetchProducer(Q1, Q2, TIME_BEFORE_Q1_POLL));
+		es.execute(new FetchConsumer(Q2, sb));
+
+		es.shutdown();
+		es.awaitTermination(5, TimeUnit.SECONDS);
+		sb.append("]");
+		return sb;
+	}
 }
