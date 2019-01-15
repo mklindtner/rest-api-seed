@@ -21,7 +21,7 @@ public abstract class Producer<Input, Output> implements Runnable
 	{
 		while (true) {
 			try {
-				Input input = inputArrayBlockingQueue.poll(secondsBeforePull, TimeUnit.SECONDS); //change according to need
+				Input input = inputArrayBlockingQueue.poll(secondsBeforePull, TimeUnit.SECONDS);
 				if (input == null)
 					break;
 				outputArrayBlockingQueue.put(task(input));

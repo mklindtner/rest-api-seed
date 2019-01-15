@@ -36,7 +36,7 @@ public class FetchResults
 		es.execute(new FetchConsumer(Q2, sb));
 
 		es.shutdown();
-		es.awaitTermination(5, TimeUnit.SECONDS);
+		es.awaitTermination(1, TimeUnit.SECONDS);
 		sb.append("]");
 		return sb;
 	}

@@ -37,7 +37,7 @@ public class DataFromWeb
 		return sb.toString();
 	}
 
-	//unnecessary to use producer/consumer but easier than implement
+	//unnecessary to use producer/consumer but easier than implement the rest..
 	@GET
 	@Path("swapi/{pageNumber}/{type}")
 	@Produces
@@ -49,6 +49,17 @@ public class DataFromWeb
 		ArrayBlockingQueue<String> outputList = new ArrayBlockingQueue<>(5);
 
 		inputList.add("https://swapi.co/api/" + type + "/" + pageNumber);
+		return fetchResults.getResult(inputList, outputList).toString();
+	}
+
+	@GET
+	@Path("swapi/planets")
+	public String getPlanets() throws InterruptedException
+	{
+		ArrayBlockingQueue<String> inputList  = new ArrayBlockingQueue<>(5);
+		ArrayBlockingQueue<String> outputList = new ArrayBlockingQueue<>(5);
+
+		inputList.add("https://swapi.co/api/planets");
 		return fetchResults.getResult(inputList, outputList).toString();
 	}
 }
