@@ -6,3 +6,5 @@ Generic CRUDS using composite repository pattern (DATA)
 Generic DTO Mapper (REST)
 Generic Rest-endpoints (REST)
 Generic Producer-Consumer solution (logic)
+
+Uses SPA called rest-frontend-seed
