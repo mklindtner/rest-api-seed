@@ -1,5 +1,8 @@
-<b>Info</b><br />
-remember that you can import data into prod server from src/resources/import.sql
+A repository for quick-startup of the backend of a fullstack application. 
 
-<b>smth about exceptionMapper here</b>
-
+Concepts
+using JPA - hibernate
+Generic CRUDS using composite repository pattern (DATA)
+Generic DTO Mapper (REST)
+Generic Rest-endpoints (REST)
+Generic Producer-Consumer solution (logic)
