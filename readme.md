@@ -47,11 +47,8 @@
 # Tools
 *For versions see build.gradle*
 ## General
-* JPA Hibernate
-* Java 
-* Gradle
+* JPA Hibernate / Java / Gradle / CORS
 * MySQL 
-* CORS
 
 ## Testing
 * Derby 
