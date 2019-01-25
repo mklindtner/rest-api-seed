@@ -1,11 +1,11 @@
 # Quick startup of a backendfor a fullstack application. 
 
 ## Concepts
-*using JPA - hibernate
-Generic CRUDS using composite repository pattern (DATA)
-Generic DTO Mapper (REST)
-Generic Rest-endpoints (REST)
-Generic Producer-Consumer solution (logic)*
+* using JPA - hibernate
+* Generic CRUDS using composite repository pattern (DATA)
+* Generic DTO Mapper (REST)
+* Generic Rest-endpoints (REST)
+* Generic Producer-Consumer solution (logic)*
 
 Uses SPA called rest-frontend-seed
 
@@ -19,7 +19,7 @@ https://fluffysnail.com/rest-api-seed/api/anyObject2 (GET)
 ## Auth Through endpoints
 
 1. https://fluffysnail.com/rest-api-seed/api/login (POST)
-*Body JSON
+* Body JSON
   "username" : "admin" or "user"
   "password" : "test" or "test"
  output: username & token
