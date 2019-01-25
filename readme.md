@@ -3,18 +3,18 @@
 # Concepts and dist.
 
 ## Generics
-* Generic CRUDS using composite repository pattern (data/repositories/genericRepositories)
-* Generic Producer-Consumer solution (logic/producerConsumer)
-* Generic DTO Mapper (rest/DTO)
-* Generic Exception Mapper (rest/exceptions)
-* Generic Rest-endpoints w/o relations (rest/genericRest)
+* Generic CRUDS using composite repository pattern *data/repositories/genericRepositories*
+* Generic Producer-Consumer solution *logic/producerConsumer*
+* Generic DTO Mapper *rest/DTO*
+* Generic Exception Mapper *rest/exceptions*
+* Generic Rest-endpoints w/o relations *rest/genericRest*
 
 ## Examples
-* User has BCrypt but is commented out for simplicity (data/entities/user)
-* many-many example (data/entities/user)
+* User has BCrypt but is commented out for simplicity *data/entities/user*
+* many-many example *data/entities/user*
   - One-many, One-One can be provided upon request
   - Inheritance(single table,table per class, joined or mapped superclass) using JPA can be provided upon request
-* Producer/Consumer (logic/producerConsumer/fetchDataMultiThread) 
+* Producer/Consumer *logic/producerConsumer/fetchDataMultiThread*
 
 # EndPoints
 https://fluffysnail.com/rest-api-seed/api/anyObject2 (GET)
