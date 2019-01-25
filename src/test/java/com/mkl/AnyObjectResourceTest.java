@@ -1,43 +1,46 @@
 package com.mkl;
 
 import com.mkl.data.entities.AnyObject;
+import com.mkl.logic.facades.AnyObjectFacade;
+import org.junit.Before;
 import org.junit.Test;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import java.util.Set;
+
 import static org.junit.Assert.*;
 
 public class AnyObjectResourceTest
 {
-    	/* example of setup
-	@Before
-	public void setupData()
-	{
-		Customer c1 = createCustomer();
-		Set<OrderExam> orderExams = createOrder(c1);
-		Set<OrderLine> orderLines = createOrderLines(orderExams);
-		Set<ItemType> itemTypes = createItemType(orderLines);
-		setOrdersExamOrderLine(orderExams, orderLines);
-		setOrderLinesItemType(orderLines, itemTypes);
+    private EntityManagerFactory emf;
+    private AnyObjectFacade anyObjectFacade;
+    private Set<AnyObject> anyObjects;
 
+    @Before public void initialize()
+    {
+        this.emf = TestJPAConnector.getEntityManagerFactory();
+        this.anyObjectFacade = new AnyObjectFacade(TestJPAConnector.getEntityManagerFactory());
+        persistItem();
+    }
 
-		c1.setOrder(orderExams);
-		persistCustomer(c1, itemTypes); //use em inside here
-
-		this.orderLines = orderLines;
-		this.orderExams = orderExams;
-		this.itemTypes = itemTypes;
-		this.orderRepository = new OrderRepository(emf);
-	}*/
     	/*
     	    1) create first object
     	    2) Crete List
     	    3) Set Relationships
-    	    4) persist 1 object
-    	    5) assign to global variable
+    	    4) persist lists of objects
+    	    5) assign to class lists
     	 */
+
+
+
+    //add list to parameter and persist
+    private void persistItem()
+    {
+        this.emf = TestJPAConnector.getEntityManagerFactory();
+    }
 
     @Test
     public void getIt()

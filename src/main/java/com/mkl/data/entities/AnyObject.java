@@ -2,7 +2,7 @@ package com.mkl.data.entities;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "AnyObject")
 public class AnyObject
 {
 	@Id
