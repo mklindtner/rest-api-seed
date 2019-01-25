@@ -31,6 +31,9 @@
 * https://fluffysnail.com/rest-api-seed/api/webdata/swapi/idStart (GET) 
 * https://fluffysnail.com/rest-api-seed/api/webdata/swapi/pageNumber/type (GET) *ex. pageNumber=2, type=planets*
   
+ ### Exception example
+ *an example of the generic exception mapper in action*
+ * https://fluffysnail.com/rest-api-seed/api/anyObject2/provokeException (GET)
 
 ## Auth Through endpoints
 1. https://fluffysnail.com/rest-api-seed/api/login (POST)
