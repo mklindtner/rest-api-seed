@@ -9,13 +9,9 @@ import com.mkl.rest.dto.AnyObjectDTO;
 import com.mkl.rest.exceptions.specificResponseExceptions.TestException;
 import com.mkl.rest.genericRest.BaseRest;
 
-//import javax.ws.rs.*;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
-//import javax.ws.rs.core.MediaType.APPLICATION_JSON;
-
 
 @Path("anyObject2")
 public class AnyObjectResource
@@ -35,6 +31,14 @@ public class AnyObjectResource
 		return baseRest.get();
 	}
 
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("{id}")
+	public Response anyObjectById(@PathParam("id") int id)
+	{
+		return baseRest.getByPK(id);
+	}
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -43,14 +47,15 @@ public class AnyObjectResource
 		return baseRest.post(content);
 	}
 
-
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@PUT
 	@Path("{id}")
-	public Response anyObjectById(@PathParam("id") int id)
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response updateAnyObject(@PathParam("id") int id, String content) throws NoSuchFieldException, IllegalAccessException
 	{
-		return baseRest.getByPK(id);
+		return baseRest.put(id, content);
 	}
+
 
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)

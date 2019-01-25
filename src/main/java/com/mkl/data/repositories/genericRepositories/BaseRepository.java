@@ -58,11 +58,17 @@ public class BaseRepository<E, PK> implements CRUDOperations<E, PK>
 	{
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		if (em.contains(entity))
-			return entity;
-		em.merge(entity);
-		em.getTransaction().commit();
-		em.close();
+		try {
+			if (em.contains(entity))
+				return entity;
+			em.merge(entity);
+			em.getTransaction().commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			em.close();
+		}
+
 		return entity;
 		//return em.contains(entity) ? entity : em.merge(entity); //unsure if htis works
 	}

@@ -76,7 +76,7 @@ public class BaseRest<E, EDTO>
 		Field f      = entity.getClass().getDeclaredField("id");
 		f.setAccessible(true);
 		f.setInt(entity, id);
-		E result = crudOperations.put(entity);
+		E result = facade.put(entity);
 		return Response
 				.ok(gson.toJson(baseDTOMapper.apply(result)))
 				.build();
