@@ -1,6 +1,6 @@
-A repository for quick-startup of the backend of a fullstack application. 
+#Quick startup of a backendfor a fullstack application. 
 
-Concepts
+##Concepts
 using JPA - hibernate
 Generic CRUDS using composite repository pattern (DATA)
 Generic DTO Mapper (REST)
@@ -13,7 +13,7 @@ in logic:
 generic implementation of consumer-producer problem with examples included.
 
 
-#EndPoints
+##EndPoints
 https://fluffysnail.com/rest-api-seed/api/anyObject2 (GET)
 
 ##Auth Through endpoints
