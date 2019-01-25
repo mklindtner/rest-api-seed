@@ -30,7 +30,7 @@ https://fluffysnail.com/rest-api-seed/api/anyObject2 (GET)
    - value: output token value
    
 # Tools
-*For versions see gradle package
+*For versions see build.gradle*
 ## General
 * JPA Hibernate
 * Java 
