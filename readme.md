@@ -11,7 +11,8 @@
 
 ## Examples
 * User has BCrypt but is commented out for simplicity (data/entities/user)
-* Repository Pattern w. many-many example (data/entities/user)
+* many-many example (data/entities/user)
+* Producer/Consumer (logic/producerConsumer/fetchDataMultiThread) 
 
 
 # EndPoints
