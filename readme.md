@@ -26,5 +26,5 @@ https://fluffysnail.com/rest-api-seed/api/anyObject2 (GET)
  
 2.https://fluffysnail.com/rest-api-seed/api/info/admin (GET)
 2.B) In Header add
-   key: x-access-token
-   value: output token value
+   - key: x-access-token
+   - value: output token value
