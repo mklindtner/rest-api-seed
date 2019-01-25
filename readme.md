@@ -8,3 +8,10 @@ Generic Rest-endpoints (REST)
 Generic Producer-Consumer solution (logic)
 
 Uses SPA called rest-frontend-seed
+
+in logic:
+generic implementation of consumer-producer problem with examples included.
+
+
+To Use:
+#my webservice with postman here...
