@@ -1,4 +1,4 @@
-# Quick startup of a backendfor a fullstack application. 
+# Quick startup of a backend for a fullstack application. 
 
 # Concepts and dist.
 
