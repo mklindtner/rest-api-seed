@@ -18,7 +18,8 @@
 * Producer/Consumer *logic/producerConsumer/fetchDataMultiThread*
 
 # EndPoints
-*example of an id would be to write "1" instead of id*
+*example of an id would be to write "1" instead of id* <br />
+NB! The links will show a 404 use a API request tool like postman
 ### Fetch object generated in database 
 * https://fluffysnail.com/rest-api-seed/api/anyObject2 (GET, all)
 * https://fluffysnail.com/rest-api-seed/api/anyObject2/id (GET)
