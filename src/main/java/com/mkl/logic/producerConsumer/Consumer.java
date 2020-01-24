@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class Consumer<Output> implements Runnable
 {
-	public abstract void task(Output output); //?? mby??
+	public abstract void task(Output output);
 	protected ArrayBlockingQueue<Output> arrayBlockingQueue;
 
 	public Consumer(ArrayBlockingQueue<Output> arrayBlockingQueue)
